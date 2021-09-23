@@ -3,18 +3,16 @@ on:
   push:
     branches:
       - master
+
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
-          registry-url: "https://registry.npmjs.org"
+          node-version: 12
       - run: npm ci
-      - run: npm version minor
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_KEY }}
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_KEY }}
