@@ -1,5 +1,5 @@
 {
-  "name": "react-cursor-position",
+  "name": "@imizaac/react-cursor-position",
   "version": "3.0.3",
   "description": "A React component that decorates its children with touch and mouse cursor coordinates, plotted relative to itself.",
   "repository": {
@@ -80,9 +80,10 @@
     "webpack-bundle-analyzer": "^2.9.0"
   },
   "peerDependencies": {
-    "react": "~0.14.9 || ^15.0.0 || ^16.0.0 || ^17.0.0"
+    "react": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "dependencies": {
+    "np": "^7.5.0",
     "object-assign": "^4.1.1",
     "object.omit": "^3.0.0",
     "prop-types": "^15.6.0"
